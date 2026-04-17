@@ -1,0 +1,51 @@
+{
+  "now": {
+    "temp": 78,
+    "wind_mph": 11,
+    "precip_pct": 20
+  },
+  "hourly": [
+    {
+      "time": "8A",
+      "temp": 74,
+      "wind_mph": 8,
+      "precip_pct": 10
+    },
+    {
+      "time": "9A",
+      "temp": 76,
+      "wind_mph": 9,
+      "precip_pct": 10
+    },
+    {
+      "time": "10A",
+      "temp": 78,
+      "wind_mph": 11,
+      "precip_pct": 20
+    },
+    {
+      "time": "11A",
+      "temp": 80,
+      "wind_mph": 12,
+      "precip_pct": 20
+    },
+    {
+      "time": "12P",
+      "temp": 82,
+      "wind_mph": 13,
+      "precip_pct": 25
+    },
+    {
+      "time": "1P",
+      "temp": 83,
+      "wind_mph": 14,
+      "precip_pct": 30
+    },
+    {
+      "time": "2P",
+      "temp": 84,
+      "wind_mph": 14,
+      "precip_pct": 30
+    }
+  ]
+}

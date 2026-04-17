@@ -1,0 +1,26 @@
+<section id="{{ section_display(site_config, 'results').anchor }}" class="card tight-card">
+    <div class="section-head compact-head">
+        <h2>{{ section_display(site_config, 'results').home_title }}</h2>
+        <span class="muted">Uploaded daily results cards</span>
+    </div>
+
+    {% set visible_entries = results.entries | selectattr('visible') | rejectattr('archived') | list %}
+    {% if visible_entries %}
+    <div class="results-entry-grid">
+        {% for item in visible_entries %}
+        <article class="result-entry-card">
+            <a href="{{ item.image_url }}" target="_blank">
+                <img src="{{ item.image_url }}" alt="{{ item.title }}">
+            </a>
+            <div class="result-entry-body">
+                <div class="result-entry-title">{{ item.title|safe }}</div>
+                {% if item.date %}<div class="result-entry-date">{{ item.date }}</div>{% endif %}
+                {% if item.note %}<div class="result-entry-note">{{ item.note|safe }}</div>{% endif %}
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="muted">No daily results posted yet.</div>
+    {% endif %}
+</section>

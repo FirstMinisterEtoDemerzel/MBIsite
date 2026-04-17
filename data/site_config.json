@@ -1,0 +1,95 @@
+{
+  "top_line_1": "Myrtle Beach Invitational",
+  "top_line_2": "MBI 2026",
+  "top_line_3": "May 12-16, 2026",
+  "hero_image_url": "https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_320,w_320,f_auto,q_auto/407003/Polak__newsm_djywea.png",
+  "weather_zip_code": "29585",
+  "section_order": [
+    "weather",
+    "checkin",
+    "announcements",
+    "schedule",
+    "documents",
+    "players",
+    "results",
+    "scorecards",
+    "places",
+    "whoswho",
+    "pastpix",
+    "media"
+  ],
+  "section_settings": {
+    "weather": {
+      "menu_text": "Weather",
+      "home_title": "Golf Weather",
+      "admin_title": "Golf Weather",
+      "anchor": "weather"
+    },
+    "checkin": {
+      "menu_text": "Check-In",
+      "home_title": "Check-In Info",
+      "admin_title": "Check-In Info",
+      "anchor": "checkin"
+    },
+    "results": {
+      "menu_text": "Results",
+      "home_title": "Daily Results",
+      "admin_title": "Daily Results",
+      "anchor": "results"
+    },
+    "schedule": {
+      "menu_text": "Schedule",
+      "home_title": "Trip Schedule",
+      "admin_title": "Trip Schedule",
+      "anchor": "schedule"
+    },
+    "announcements": {
+      "menu_text": "Announcements",
+      "home_title": "Announcements",
+      "admin_title": "Announcements",
+      "anchor": "announcements"
+    },
+    "documents": {
+      "menu_text": "Documents",
+      "home_title": "Documents",
+      "admin_title": "Documents",
+      "anchor": "documents"
+    },
+    "scorecards": {
+      "menu_text": "Cards",
+      "home_title": "Scorecards",
+      "admin_title": "Scorecards",
+      "anchor": "scorecards"
+    },
+    "players": {
+      "menu_text": "Golfers",
+      "home_title": "Golfer List",
+      "admin_title": "Golfer List",
+      "anchor": "players"
+    },
+    "places": {
+      "menu_text": "Places",
+      "home_title": "Places Of Interest",
+      "admin_title": "Places Of Interest",
+      "anchor": "places"
+    },
+    "whoswho": {
+      "menu_text": "Who's Who",
+      "home_title": "Who's Who",
+      "admin_title": "Who's Who",
+      "anchor": "whoswho"
+    },
+    "media": {
+      "menu_text": "Media",
+      "home_title": "Trip Media",
+      "admin_title": "Trip Media",
+      "anchor": "media"
+    },
+    "pastpix": {
+      "menu_text": "Past Pix",
+      "home_title": "Pix from Past Years",
+      "admin_title": "Pix from Past Years",
+      "anchor": "pastpix"
+    }
+  }
+}

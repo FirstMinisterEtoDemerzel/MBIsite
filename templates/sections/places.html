@@ -1,0 +1,27 @@
+<section id="{{ section_display(site_config, 'places').anchor }}" class="card tight-card">
+    <div class="section-head compact-head">
+        <h2>{{ section_display(site_config, 'places').home_title }}</h2>
+        <span class="muted">Simple filter-ready list</span>
+    </div>
+    <div class="pill-row">
+        <span class="pill active-pill">All</span>
+        <span class="pill">Golf</span>
+        <span class="pill">Food</span>
+        <span class="pill">Groceries</span>
+        <span class="pill">Misc</span>
+    </div>
+    <div class="places-list">
+        {% for place in places %}
+        <div class="place-row">
+            <div class="place-main">
+                <div class="place-name">{{ place.name }}</div>
+                <div class="place-meta">{{ place.category }} • {{ place.address }}</div>
+            </div>
+            <div class="place-links">
+                <a href="{{ place.website }}" target="_blank">Site</a>
+                <a href="{{ place.directions }}" target="_blank">Directions</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

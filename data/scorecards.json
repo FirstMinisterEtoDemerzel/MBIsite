@@ -1,0 +1,22 @@
+[
+  {
+    "course": "Caledonia",
+    "day": "Wed 5/13",
+    "image": "caledonia-scorecard.jpg"
+  },
+  {
+    "course": "True Blue",
+    "day": "Thu 5/14",
+    "image": "true-blue-scorecard.jpg"
+  },
+  {
+    "course": "TPC Myrtle Beach",
+    "day": "Fri 5/15",
+    "image": "tpc-myrtlebeach-scorecard.jpg"
+  },
+  {
+    "course": "Pawleys Plantation",
+    "day": "Sat 5/16",
+    "image": "pawleys-plantation-scorecard.jpg"
+  }
+]

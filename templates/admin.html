@@ -1,0 +1,443 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="card admin-shell">
+    <div class="section-head">
+        <h2>Admin / Organizer Workspace</h2>
+        <span class="muted">Desktop recommended</span>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-stack">
+          {% for category, message in messages %}
+            <div class="flash-item flash-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <div class="desktop-note">
+        This area is intended for larger screens. Use it to control the public-facing basics before moving into deeper admin workflows.
+    </div>
+
+    <div class="admin-grid">
+        <div class="admin-panel">
+            <h3>Site Basics</h3>
+            <form class="basic-config-form" method="post" action="{{ url_for('save_site_config_route') }}" enctype="multipart/form-data">
+                <label>Top Line 1
+                    <input type="text" name="top_line_1" value="{{ site_config.top_line_1 }}">
+                </label>
+                <label>Top Line 2
+                    <input type="text" name="top_line_2" value="{{ site_config.top_line_2 }}">
+                </label>
+                <label>Top Line 3
+                    <input type="text" name="top_line_3" value="{{ site_config.top_line_3 }}">
+                </label>
+                <label>Center Top Image URL
+                    <input type="text" name="hero_image_url" value="{{ site_config.hero_image_url }}">
+                </label>
+                <label>Upload Center Top Image
+                    <input type="file" name="hero_image_file" accept=".png,.jpg,.jpeg,.webp,.gif">
+                </label>
+                <label>Weather ZIP Code
+                    <input type="text" name="weather_zip_code" value="{{ site_config.weather_zip_code }}">
+                </label>
+                <label class="full-width">Check-In Info (single free-form block, simple markup allowed; line breaks become &lt;br&gt;)
+                    <textarea name="checkin_info_text" rows="6">{{ checkin_info_text }}</textarea>
+                </label>
+
+                <div class="section-order-box full-width">
+                    <div class="section-order-head">Section Titles / Menu Text</div>
+                    <div class="import-sub">Each section can have one menu label and one home-page title. The home-page title is also used here in Admin.</div>
+                    <div class="section-label-grid">
+                        {% for key in section_order %}
+                        <div class="section-label-card">
+                            <div class="section-label-name">{{ site_config.section_settings[key].home_title }}</div>
+                            <label>Menu Text
+                                <input type="text" name="section_menu_text__{{ key }}" value="{{ site_config.section_settings[key].menu_text }}">
+                            </label>
+                            <label>Home Section Title
+                                <input type="text" name="section_home_title__{{ key }}" value="{{ site_config.section_settings[key].home_title }}">
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="section-order-box full-width">
+                    <div class="section-order-head">Section Order</div>
+                    <div class="import-sub">Use the Up and Down buttons, then save site basics.</div>
+                    <ul class="section-order-list" id="section-order-list">
+                        {% for key in section_order %}
+                        <li class="section-order-item">
+                            <input type="hidden" name="section_order" value="{{ key }}">
+                            <span class="section-order-number">{{ loop.index }}.</span>
+                            <span class="section-order-label">{{ section_display(site_config, key).home_title }}</span>
+                            <div class="section-order-actions">
+                                <button type="button" class="small-btn section-order-btn move-up">Move Up</button>
+                                <button type="button" class="small-btn section-order-btn move-down">Move Down</button>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <button class="small-btn" type="submit">Save Site Basics</button>
+            </form>
+        </div>
+
+        <div class="admin-panel">
+            <h3>Ordering Notes</h3>
+            <ul class="config-list">
+                <li>The public home page follows the saved section order.</li>
+                <li>The mobile navigation follows the same order automatically.</li>
+                <li>Archive remains a separate page link in the nav.</li>
+                <li>Use Up / Down for a simple first-pass organizer workflow.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="admin-grid">
+        <div class="admin-panel">
+            <h3>Spreadsheet Import</h3>
+
+            <div class="import-block">
+                <div class="import-head">
+                    <div>
+                        <div class="import-title">Players Import</div>
+                        <div class="import-sub">Updates the public players table and the internal user/role list together.</div>
+                    </div>
+                    <a class="small-btn" href="{{ url_for('export_players_template') }}">Download Template</a>
+                </div>
+
+                <form class="import-form" method="post" action="{{ url_for('import_players') }}" enctype="multipart/form-data">
+                    <input type="file" name="players_csv" accept=".csv">
+                    <button class="small-btn" type="submit">Import Players CSV</button>
+                </form>
+
+                <div class="header-chip-row">
+                    {% for header in player_template_headers %}
+                    <span class="header-chip">{{ header }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="import-block">
+                <div class="import-head">
+                    <div>
+                        <div class="import-title">Trip Schedule Import</div>
+                        <div class="import-sub">Date must be mm/dd/yyyy and the app will derive the 3-letter day abbreviation automatically. Basic markup allowed in What / Where / Note: &lt;b&gt;, &lt;i&gt;, &lt;u&gt;, &lt;br&gt;.</div>
+                    </div>
+                    <a class="small-btn" href="{{ url_for('export_schedule_template') }}">Download Template</a>
+                </div>
+
+                <form class="import-form" method="post" action="{{ url_for('import_schedule') }}" enctype="multipart/form-data">
+                    <input type="file" name="schedule_csv" accept=".csv">
+                    <button class="small-btn" type="submit">Import Schedule CSV</button>
+                </form>
+
+                <div class="header-chip-row">
+                    {% for header in schedule_template_headers %}
+                    <span class="header-chip">{{ header }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="admin-panel">
+            <h3>Current Schedule Preview</h3>
+            <div class="table-wrap">
+                <table class="dense-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Time</th>
+                            <th>Title</th>
+                            <th>Location</th>
+                            <th>Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in schedule %}
+                        <tr>
+                            <td>{{ item.day }}</td>
+                            <td>{{ item.time }}</td>
+                            <td>{{ item.title | safe }}</td>
+                            <td>{{ item.location | safe }}</td>
+                            <td>{{ item.note | safe }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="admin-panel">
+            <h3>{{ section_display(site_config, 'announcements').home_title }}</h3>
+            <div class="import-sub">Simple timely notes with 3 text fields: From, To, and Note.</div>
+            <form class="stack-form" method="post" action="{{ url_for('save_announcement') }}">
+                <input type="hidden" name="announcement_id" id="announcement_id" value="">
+                <label>From
+                    <input type="text" name="announcement_from" id="announcement_from" placeholder="Tue 3:45 PM">
+                </label>
+                <label>To
+                    <input type="text" name="announcement_to" id="announcement_to" placeholder="Optional end time or date">
+                </label>
+                <label class="full-width">Note
+                    <textarea name="announcement_note" id="announcement_note" rows="3" placeholder="Timely organizer note"></textarea>
+                </label>
+                <div class="section-order-actions">
+                    <button class="small-btn" type="submit">Save Announcement</button>
+                    <button class="small-btn secondary-btn" type="button" id="announcement_clear_btn">Clear</button>
+                </div>
+            </form>
+            <div class="admin-item-list">
+                {% for item in announcements %}
+                <div class="admin-item-card">
+                    <div>
+                        <div class="admin-item-title">{{ announcement_range_label(item) }}</div>
+                        <div class="admin-item-meta">{{ item.note | safe }}</div>
+                    </div>
+                    <div class="section-order-actions">
+                        <button
+                            class="small-btn secondary-btn announcement-edit-btn"
+                            type="button"
+                            data-id="{{ item.id }}"
+                            data-from="{{ item.from }}"
+                            data-to="{{ item.to }}"
+                            data-note="{{ item.note | e }}">Edit</button>
+                        <form method="post" action="{{ url_for('delete_announcement', announcement_id=item.id) }}">
+                            <button class="small-btn danger-btn" type="submit">Delete</button>
+                        </form>
+                    </div>
+                </div>
+                {% else %}
+                <div class="muted">No announcements posted yet.</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-grid admin-grid-bottom">
+        <div class="admin-panel">
+            <h3>Current Players Preview</h3>
+            <div class="table-wrap">
+                <table class="dense-table">
+                    <thead>
+                        <tr>
+                            <th>First</th>
+                            <th>Last</th>
+                            <th>Hdcp</th>
+                            <th>Flight</th>
+                            <th>Tee</th>
+                            <th>Room</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for p in players %}
+                        <tr>
+                            <td>{{ p.first_name }}</td>
+                            <td>{{ p.last_name }}</td>
+                            <td>{{ p.handicap }}</td>
+                            <td>{{ p.flight }}</td>
+                            <td>{{ p.tee }}</td>
+                            <td>{{ p.room | safe }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="admin-panel">
+            <h3>Config Snapshot</h3>
+            <ul class="config-list">
+                <li>Default media limit: {{ current_upload_limit_mb }} MB</li>
+                <li>Phone numbers hidden from public site</li>
+                <li>Photos/videos post immediately</li>
+                <li>Organizers can delete content</li>
+                <li>Weather uses live condition and wind direction data</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="admin-grid">
+        <div class="admin-panel">
+            <h3>Daily Results Workflow</h3>
+            <div class="import-sub">This is just a simple uploaded result card for now: image + title + date/label + optional note. No leader, leaderboard, or special template is required.</div>
+            <form class="stack-form" method="post" action="{{ url_for('upload_result') }}" enctype="multipart/form-data">
+                <label>Title
+                    <input type="text" name="result_title" placeholder="Round 1, Day 2, Caledonia, etc.">
+                </label>
+                <label>Date / Label
+                    <input type="text" name="result_date" placeholder="Wed 5/13 or 05/13/2026">
+                </label>
+                <label class="full-width">Short Note
+                    <textarea name="result_note" rows="3" placeholder="Optional note shown under the image"></textarea>
+                </label>
+                <label>Result Image
+                    <input type="file" name="result_image" accept=".png,.jpg,.jpeg,.webp,.gif">
+                </label>
+                <label class="checkbox-row"><input type="checkbox" name="result_visible" checked> Visible on public site</label>
+                <label class="checkbox-row"><input type="checkbox" name="result_archived"> Archive only</label>
+                <button class="small-btn" type="submit">Upload Daily Result</button>
+            </form>
+            <div class="admin-item-list">
+                {% for item in results_data.entries %}
+                <div class="admin-item-card">
+                    <div>
+                        <div class="admin-item-title">{{ item.title|safe }}</div>
+                        <div class="admin-item-meta">{{ item.date }}{% if item.archived %} • archived{% endif %}{% if not item.visible %} • hidden{% endif %}</div>
+                        <div class="admin-item-meta">{{ item.image_filename }}</div>
+                    </div>
+                    <form method="post" action="{{ url_for('delete_result', result_id=item.id) }}">
+                        <button class="small-btn danger-btn" type="submit">Delete</button>
+                    </form>
+                </div>
+                {% else %}
+                <div class="muted">No uploaded daily result images yet.</div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="admin-panel">
+            <h3>Documents Upload</h3>
+            <form class="stack-form" method="post" action="{{ url_for('upload_document') }}" enctype="multipart/form-data">
+                <label>Title
+                    <input type="text" name="document_title" placeholder="Pairings, rules, itinerary, etc.">
+                </label>
+                <label class="full-width">Note / Description
+                    <textarea name="document_note" rows="3" placeholder="Optional description"></textarea>
+                </label>
+                <label>File
+                    <input type="file" name="document_file" accept=".pdf,.csv,.xlsx,.xls,.doc,.docx,.png,.jpg,.jpeg,.webp,.txt">
+                </label>
+                <label class="checkbox-row"><input type="checkbox" name="document_visible" checked> Visible on public site</label>
+                <button class="small-btn" type="submit">Upload Document</button>
+            </form>
+            <div class="admin-item-list">
+                {% for item in documents %}
+                <div class="admin-item-card">
+                    <div>
+                        <div class="admin-item-title">{{ item.title|safe }}</div>
+                        <div class="admin-item-meta">{{ item.filename or item.url }}</div>
+                    </div>
+                    {% if item.id %}
+                    <form method="post" action="{{ url_for('delete_document', document_id=item.id) }}">
+                        <button class="small-btn danger-btn" type="submit">Delete</button>
+                    </form>
+                    {% endif %}
+                </div>
+                {% else %}
+                <div class="muted">No uploaded documents yet.</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-grid admin-grid-bottom">
+        <div class="admin-panel">
+            <h3>Media Upload</h3>
+            <form class="stack-form" method="post" action="{{ url_for('upload_media') }}" enctype="multipart/form-data">
+                <label>Title
+                    <input type="text" name="media_title" placeholder="Arrival, clubhouse, awards, etc.">
+                </label>
+                <label class="full-width">Caption
+                    <textarea name="media_caption" rows="3" placeholder="Optional caption"></textarea>
+                </label>
+                <label>Upload Image or Video
+                    <input type="file" name="media_file" accept=".png,.jpg,.jpeg,.webp,.gif,.mp4,.mov,.webm,.m4v">
+                </label>
+                <label>Or YouTube Video / Playlist Link
+                    <input type="url" name="media_link" placeholder="https://www.youtube.com/watch?v=... or playlist link">
+                </label>
+                <label class="checkbox-row"><input type="checkbox" name="media_visible" checked> Visible on public site</label>
+                <button class="small-btn" type="submit">Add Media</button>
+            </form>
+        </div>
+
+        <div class="admin-panel">
+            <h3>Current Media</h3>
+            <div class="admin-media-grid">
+                {% for item in media_items %}
+                <div class="admin-media-card">
+                    {% if item.type == 'youtube' %}
+                    <div class="admin-media-placeholder">YouTube</div>
+                    {% elif item.type == 'video' %}
+                    <div class="admin-media-placeholder">Video</div>
+                    {% else %}
+                    <img src="{{ item.src }}" alt="{{ item.caption or item.title or 'media' }}">
+                    {% endif %}
+                    <div class="admin-item-title">{{ item.title|safe or item.caption|safe or item.filename }}</div>
+                    <div class="admin-item-meta">{{ item.filename or item.type }}</div>
+                    {% if item.type == 'youtube' %}<a href="{{ item.src }}" target="_blank">Open on YouTube</a>{% endif %}
+                    {% if item.id %}
+                    <form method="post" action="{{ url_for('delete_media', media_id=item.id) }}">
+                        <button class="small-btn danger-btn" type="submit">Delete</button>
+                    </form>
+                    {% endif %}
+                </div>
+                {% else %}
+                <div class="muted">No uploaded media yet.</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<script>
+(function () {
+    const list = document.getElementById('section-order-list');
+    if (!list) return;
+
+    function refreshOrderNumbers() {
+        Array.from(list.querySelectorAll('.section-order-item')).forEach(function (item, index) {
+            const num = item.querySelector('.section-order-number');
+            if (num) num.textContent = (index + 1) + '.';
+        });
+    }
+
+    list.addEventListener('click', function (event) {
+        const button = event.target.closest('button');
+        if (!button) return;
+        event.preventDefault();
+        const item = button.closest('.section-order-item');
+        if (!item) return;
+        if (button.classList.contains('move-up') && item.previousElementSibling) {
+            list.insertBefore(item, item.previousElementSibling);
+            refreshOrderNumbers();
+        }
+        if (button.classList.contains('move-down') && item.nextElementSibling) {
+            list.insertBefore(item.nextElementSibling, item);
+            refreshOrderNumbers();
+        }
+    });
+
+    refreshOrderNumbers();
+
+    const annId = document.getElementById('announcement_id');
+    const annFrom = document.getElementById('announcement_from');
+    const annTo = document.getElementById('announcement_to');
+    const annNote = document.getElementById('announcement_note');
+    const annClear = document.getElementById('announcement_clear_btn');
+    document.querySelectorAll('.announcement-edit-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            annId.value = btn.dataset.id || '';
+            annFrom.value = btn.dataset.from || '';
+            annTo.value = btn.dataset.to || '';
+            annNote.value = btn.dataset.note || '';
+            annFrom.focus();
+        });
+    });
+    if (annClear) {
+        annClear.addEventListener('click', function () {
+            annId.value = '';
+            annFrom.value = '';
+            annTo.value = '';
+            annNote.value = '';
+        });
+    }
+})();
+</script>
+{% endblock %}

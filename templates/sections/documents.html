@@ -1,0 +1,16 @@
+<section id="{{ section_display(site_config, 'documents').anchor }}" class="card tight-card">
+    <div class="section-head compact-head">
+        <h2>{{ section_display(site_config, 'documents').home_title }}</h2>
+        <span class="muted">Organizer attachments</span>
+    </div>
+    <div class="doc-list">
+        {% for doc in documents %}
+        <a class="doc-row" href="{{ doc.url }}" target="_blank">
+            <div class="doc-title">{{ doc.title|safe }}</div>
+            <div class="doc-note">{{ doc.note|safe }}</div>
+        </a>
+        {% else %}
+        <div class="muted">No documents posted yet.</div>
+        {% endfor %}
+    </div>
+</section>

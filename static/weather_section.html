@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Applet - Pawleys Island, SC</title>
+    <style>
+        body { margin: 0; }
+        .weather-applet {
+            font-family: Arial, sans-serif;
+            background-color: #303F9F;
+            color: #FFFFFF;
+            width: 100%;
+            min-height: 100vh;
+            padding: 10px;
+            border-radius: 8px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .weather-section { margin-bottom: 10px; }
+        .weather-section h3 { font-size: 14px; margin: 5px 0; text-align: left; }
+        .hourly-forecast, .daily-forecast {
+            display: flex; overflow-x: auto; white-space: nowrap; padding: 5px 0; gap: 10px;
+        }
+        .forecast-item { text-align: center; min-width: 60px; }
+        .forecast-item img { width: 30px; height: 30px; }
+        .forecast-item p { margin: 2px 0; font-size: 12px; }
+        .daily-forecast .forecast-item { min-width: 80px; }
+        a { color: #81D4FA; font-size: 12px; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="weather-applet">
+        <div class="weather-section">
+            <h3>Hourly Forecast (Next 6 Hours)</h3>
+            <div class="hourly-forecast" id="hourly-forecast"></div>
+        </div>
+        <div class="weather-section">
+            <h3>Daily Forecast (Next 4 Days)</h3>
+            <div class="daily-forecast" id="daily-forecast"></div>
+        </div>
+        <div>
+            More forecasts: <a href="https://www.wunderground.com/forecast/us/sc/pawleys-island/29585" target="_blank">Pawleys Island 30 days weather</a>
+        </div>
+    </div>
+    <script>
+        const mockHourlyData = [
+            { time: "7 PM", temp: 78, icon: "https://img.icons8.com/color/30/moon.png" },
+            { time: "8 PM", temp: 77, icon: "https://img.icons8.com/color/30/partly-cloudy-night.png" },
+            { time: "9 PM", temp: 76, icon: "https://img.icons8.com/color/30/cloud.png" },
+            { time: "10 PM", temp: 75, icon: "https://img.icons8.com/color/30/rain.png" },
+            { time: "11 PM", temp: 74, icon: "https://img.icons8.com/color/30/rain.png" },
+            { time: "12 AM", temp: 74, icon: "https://img.icons8.com/color/30/cloud.png" }
+        ];
+        const mockDailyData = [
+            { day: "Wed", high: 82, low: 68, icon: "https://img.icons8.com/color/30/sun.png" },
+            { day: "Thu", high: 80, low: 66, icon: "https://img.icons8.com/color/30/partly-cloudy-day.png" },
+            { day: "Fri", high: 78, low: 65, icon: "https://img.icons8.com/color/30/rain.png" },
+            { day: "Sat", high: 83, low: 69, icon: "https://img.icons8.com/color/30/sun.png" }
+        ];
+
+        function populateForecasts(hourlyData, dailyData) {
+            const hourlyContainer = document.getElementById('hourly-forecast');
+            const dailyContainer = document.getElementById('daily-forecast');
+            hourlyContainer.innerHTML = '';
+            dailyContainer.innerHTML = '';
+            hourlyData.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'forecast-item';
+                div.innerHTML = `<p>${item.time}</p><img src="${item.icon}" alt="Weather icon"><p>${item.temp}°F</p>`;
+                hourlyContainer.appendChild(div);
+            });
+            dailyData.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'forecast-item';
+                div.innerHTML = `<p>${item.day}</p><img src="${item.icon}" alt="Weather icon"><p>${item.high}°/${item.low}°</p>`;
+                dailyContainer.appendChild(div);
+            });
+        }
+
+        async function fetchWeatherData() {
+            try {
+                const apiKey = '03d71ba8a5f12e776272e1f61dd5c066';
+                const lat = 33.43;
+                const lon = -79.12;
+                const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`);
+                if (!response.ok) throw new Error('weather fetch failed');
+                const data = await response.json();
+                const hourlyData = data.list.slice(0, 6).map(item => ({
+                    time: new Date(item.dt * 1000).toLocaleTimeString('en-US', { hour: 'numeric' }),
+                    temp: Math.round(item.main.temp),
+                    icon: 'https://img.icons8.com/color/30/cloud.png'
+                }));
+                const dailyData = [];
+                const daysSeen = new Set();
+                for (const item of data.list) {
+                    const date = new Date(item.dt * 1000);
+                    const key = date.toDateString();
+                    if (!daysSeen.has(key) && dailyData.length < 4) {
+                        dailyData.push({
+                            day: date.toLocaleDateString('en-US', { weekday: 'short' }),
+                            high: Math.round(item.main.temp_max),
+                            low: Math.round(item.main.temp_min),
+                            icon: 'https://img.icons8.com/color/30/cloud.png'
+                        });
+                        daysSeen.add(key);
+                    }
+                }
+                populateForecasts(hourlyData, dailyData);
+            } catch (error) {
+                populateForecasts(mockHourlyData, mockDailyData);
+            }
+        }
+        fetchWeatherData();
+    </script>
+</body>
+</html>

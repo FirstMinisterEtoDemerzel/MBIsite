@@ -1,0 +1,226 @@
+[
+  {
+    "first_name": "Adam",
+    "last_name": "Polak",
+    "handicap": 12,
+    "flight": "B",
+    "tee": "2",
+    "room": "???"
+  },
+  {
+    "first_name": "Allan",
+    "last_name": "Watkins",
+    "handicap": 18,
+    "flight": "B",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "Andrew",
+    "last_name": "Vittery",
+    "handicap": 10,
+    "flight": "B",
+    "tee": "2",
+    "room": "???"
+  },
+  {
+    "first_name": "Barry",
+    "last_name": "McHan",
+    "handicap": 9,
+    "flight": "A",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "Ben",
+    "last_name": "Elliott",
+    "handicap": 12,
+    "flight": "B",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "Bob",
+    "last_name": "Beckham",
+    "handicap": 12,
+    "flight": "B",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "Bob",
+    "last_name": "Schlesinger",
+    "handicap": 14,
+    "flight": "SR",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "Brian",
+    "last_name": "Caldwell",
+    "handicap": 11,
+    "flight": "B",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "Dave",
+    "last_name": "Polak",
+    "handicap": 16,
+    "flight": "SR",
+    "tee": "4",
+    "room": "???"
+  },
+  {
+    "first_name": "Dennis",
+    "last_name": "Latimer",
+    "handicap": 9,
+    "flight": "A",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "Evan",
+    "last_name": "Stewart",
+    "handicap": 4,
+    "flight": "A",
+    "tee": "1",
+    "room": "???"
+  },
+  {
+    "first_name": "Jared",
+    "last_name": "Polak",
+    "handicap": 10,
+    "flight": "A",
+    "tee": "2",
+    "room": "???"
+  },
+  {
+    "first_name": "Jerry",
+    "last_name": "Probst",
+    "handicap": 16,
+    "flight": "SR",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "Joe",
+    "last_name": "Lewandowski",
+    "handicap": 19,
+    "flight": "SR",
+    "tee": "4",
+    "room": "???"
+  },
+  {
+    "first_name": "John",
+    "last_name": "Burrell",
+    "handicap": 9,
+    "flight": "A",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "John",
+    "last_name": "Smith",
+    "handicap": 8,
+    "flight": "A",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "Johnny",
+    "last_name": "Thomas",
+    "handicap": 19,
+    "flight": "SR",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "Karl",
+    "last_name": "Vittery",
+    "handicap": 7,
+    "flight": "A",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "Mike",
+    "last_name": "Ball",
+    "handicap": 15,
+    "flight": "B",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "Mike",
+    "last_name": "Quinton",
+    "handicap": 13,
+    "flight": "SR",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "Neal",
+    "last_name": "Wynn",
+    "handicap": 6,
+    "flight": "A",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "Richie",
+    "last_name": "Aitkin",
+    "handicap": 16,
+    "flight": "B",
+    "tee": "2",
+    "room": "???"
+  },
+  {
+    "first_name": "Rick",
+    "last_name": "Bostick",
+    "handicap": 7,
+    "flight": "A",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "Selwyn",
+    "last_name": "Glanzer",
+    "handicap": 9,
+    "flight": "A",
+    "tee": "2",
+    "room": "???"
+  },
+  {
+    "first_name": "Stan",
+    "last_name": "Gantt",
+    "handicap": 22,
+    "flight": "SR",
+    "tee": "3",
+    "room": "???"
+  },
+  {
+    "first_name": "Steve",
+    "last_name": "Laney",
+    "handicap": 11,
+    "flight": "SR",
+    "tee": "4",
+    "room": "???"
+  },
+  {
+    "first_name": "Taylor",
+    "last_name": "Lawrence",
+    "handicap": 11,
+    "flight": "B",
+    "tee": "2",
+    "room": "???"
+  },
+  {
+    "first_name": "Tony",
+    "last_name": "Buesing",
+    "handicap": 14,
+    "flight": "SR",
+    "tee": "4",
+    "room": "???"
+  }
+]

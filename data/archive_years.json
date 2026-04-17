@@ -1,0 +1,56 @@
+[
+  {
+    "year": 2025,
+    "label": "Recent trip",
+    "items": [
+      {
+        "image": "https://picsum.photos/seed/mbi2025a/500/500",
+        "caption": "Arrival dinner"
+      },
+      {
+        "image": "https://picsum.photos/seed/mbi2025b/500/500",
+        "caption": "Round one"
+      },
+      {
+        "image": "https://picsum.photos/seed/mbi2025c/500/500",
+        "caption": "Awards night"
+      }
+    ]
+  },
+  {
+    "year": 2024,
+    "label": "Previous year",
+    "items": [
+      {
+        "image": "https://picsum.photos/seed/mbi2024a/500/500",
+        "caption": "Course day"
+      },
+      {
+        "image": "https://picsum.photos/seed/mbi2024b/500/500",
+        "caption": "Dinner out"
+      },
+      {
+        "image": "https://picsum.photos/seed/mbi2024c/500/500",
+        "caption": "Scorecards"
+      }
+    ]
+  },
+  {
+    "year": 2023,
+    "label": "Previous year",
+    "items": [
+      {
+        "image": "https://picsum.photos/seed/mbi2023a/500/500",
+        "caption": "Morning warmup"
+      },
+      {
+        "image": "https://picsum.photos/seed/mbi2023b/500/500",
+        "caption": "Clubhouse"
+      },
+      {
+        "image": "https://picsum.photos/seed/mbi2023c/500/500",
+        "caption": "Final dinner"
+      }
+    ]
+  }
+]

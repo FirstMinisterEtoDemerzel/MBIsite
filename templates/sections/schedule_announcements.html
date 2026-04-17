@@ -1,0 +1,31 @@
+<section id="{{ section_display(site_config, 'schedule_announcements').anchor }}" class="card tight-card">
+    <div class="section-head compact-head">
+        <h2>{{ section_display(site_config, 'schedule_announcements').home_title }}</h2>
+        <span class="muted">Combined operational view</span>
+    </div>
+    <div class="announcement-list">
+        {% for item in announcements %}
+        <div class="announcement-row">
+            <div class="announcement-time">{{ item.when }}</div>
+            <div class="announcement-text">{{ item.text }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="schedule-list">
+        {% for item in schedule %}
+        <div class="schedule-item">
+            <div class="schedule-left">
+                <div class="schedule-day schedule-day-strong">{{ item.day }}</div>
+                <div class="schedule-time">{{ item.time }}</div>
+            </div>
+            <div class="schedule-right">
+                <div class="schedule-title">{{ item.title | safe }}</div>
+                <div class="schedule-location">{{ item.location | safe }}</div>
+                {% if item.note %}
+                <div class="schedule-note">{{ item.note | safe }}</div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

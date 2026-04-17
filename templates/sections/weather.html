@@ -1,0 +1,16 @@
+<section id="{{ section_display(site_config, 'weather').anchor }}" class="card tight-card weather-strip-card">
+    <div class="weather-strip-header">
+        <h2>{{ section_display(site_config, 'weather').home_title }}</h2>
+        <div class="weather-strip-now">{{ weather_feed.location_label }} • {{ weather_feed.current_summary }}</div>
+    </div>
+    <div class="weather-strip-scroll">
+        {% for item in weather_feed.hourly %}
+        <div class="weather-strip-item">
+            <div class="weather-strip-time">{{ item.time }}</div>
+            <div class="weather-strip-temp">{{ item.temp }}°</div>
+            <div class="weather-strip-meta">{{ item.wind_direction }} {{ item.wind_mph }}mph</div>
+            <div class="weather-strip-meta">{{ item.weather_type }} {{ item.precip_pct }}%</div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

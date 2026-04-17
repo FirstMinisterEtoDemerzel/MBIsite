@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ data.site_title if data else 'MBI Golf Trip' }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrap nav-wrap">
+            <div>
+                <h1 class="site-name">{{ data.year if data else '2026' }} {{ data.site_title if data else 'MBI Golf Trip' }}</h1>
+            </div>
+            <nav class="site-nav">
+                <a href="{{ url_for('index') }}#next-up">Next Up</a>
+                <a href="{{ url_for('index') }}#weather">Weather</a>
+                <a href="{{ url_for('index') }}#announcements">Announcements</a>
+                <a href="{{ url_for('index') }}#schedule">Schedule</a>
+                <a href="{{ url_for('index') }}#golfers">Golfers</a>
+                <a href="{{ url_for('index') }}#places">Places</a>
+                <a href="{{ url_for('index') }}#scorecards">Scorecards</a>
+                <a href="{{ url_for('admin') }}">Admin</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="wrap flashes">
+                {% for category, message in messages %}
+                    <div class="flash flash-{{ category }}">{{ message }}</div>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

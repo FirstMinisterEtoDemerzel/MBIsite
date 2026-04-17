@@ -1,0 +1,9 @@
+<section id="{{ section_display(site_config, 'checkin').anchor }}" class="card tight-card">
+    <div class="section-head compact-head">
+        <h2>{{ section_display(site_config, 'checkin').home_title }}</h2>
+        <span class="muted">Arrival basics</span>
+    </div>
+    <div class="checkin-simple">
+        {{ checkin_html | safe }}
+    </div>
+</section>

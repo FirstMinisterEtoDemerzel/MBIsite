@@ -1,0 +1,50 @@
+{
+  "summary_cards": [
+    {
+      "label": "Leader",
+      "value": "Evan Stewart"
+    },
+    {
+      "label": "Best Net",
+      "value": "143"
+    },
+    {
+      "label": "Latest Round",
+      "value": "TPC"
+    },
+    {
+      "label": "Updated",
+      "value": "5:42 PM"
+    }
+  ],
+  "leaderboard": [
+    {
+      "name": "Evan Stewart",
+      "handicap": 4,
+      "flight": "A",
+      "total_net": 143,
+      "place": "1"
+    },
+    {
+      "name": "Joe Lewandowski",
+      "handicap": 19,
+      "flight": "SR",
+      "total_net": 147,
+      "place": "2"
+    },
+    {
+      "name": "Richie Aitkin",
+      "handicap": 16,
+      "flight": "B",
+      "total_net": 150,
+      "place": "3"
+    },
+    {
+      "name": "Barry McHan",
+      "handicap": 9,
+      "flight": "A",
+      "total_net": 151,
+      "place": "T4"
+    }
+  ]
+}

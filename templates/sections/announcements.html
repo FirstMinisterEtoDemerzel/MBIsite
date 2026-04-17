@@ -1,0 +1,19 @@
+<section id="{{ section_display(site_config, 'announcements').anchor }}" class="card tight-card">
+    <div class="section-head compact-head">
+        <h2>{{ section_display(site_config, 'announcements').home_title }}</h2>
+        <span class="muted">Timely organizer notes</span>
+    </div>
+    <div class="announcement-list">
+        {% for item in announcements %}
+        <div class="announcement-row announcement-row-stacked">
+            <div class="announcement-time-stack">
+                {% if item.from %}<div class="announcement-time">{{ item.from }}</div>{% endif %}
+                {% if item.to %}<div class="announcement-time announcement-time-secondary">{{ item.to }}</div>{% endif %}
+            </div>
+            <div class="announcement-text">{{ item.note | safe }}</div>
+        </div>
+        {% else %}
+        <div class="muted">No announcements posted yet.</div>
+        {% endfor %}
+    </div>
+</section>

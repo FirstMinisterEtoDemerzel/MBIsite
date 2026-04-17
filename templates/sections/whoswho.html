@@ -1,0 +1,14 @@
+<section id="{{ section_display(site_config, 'whoswho').anchor }}" class="card tight-card">
+    <div class="section-head compact-head">
+        <h2>{{ section_display(site_config, 'whoswho').home_title }}</h2>
+        <span class="muted">Roster notes</span>
+    </div>
+    <div class="who-grid">
+        {% for person in whos_who %}
+        <div class="who-card">
+            <div class="who-name">{{ person.name }}</div>
+            <div class="who-note">{{ person.note }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

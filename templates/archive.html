@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="card tight-card">
+    <div class="section-head compact-head">
+        <h2>Pix from Past Years</h2>
+        <span class="muted">Jump by year</span>
+    </div>
+    <div class="pill-row">
+        {% for year in archive_years %}
+        <a class="pill active-pill" href="#year-{{ year['year'] }}">{{ year['year'] }}</a>
+        {% endfor %}
+    </div>
+</section>
+
+{% for year in archive_years %}
+<section id="year-{{ year['year'] }}" class="card tight-card">
+    <div class="section-head compact-head">
+        <h2>{{ year['year'] }}</h2>
+        <span class="muted">{{ year['label'] }}</span>
+    </div>
+    <div class="archive-grid">
+        {% for item in year['items'] %}
+        <div class="archive-tile">
+            <img src="{{ item['image'] }}" alt="{{ item['caption'] }}">
+            <div class="media-caption">{{ item['caption'] }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endfor %}
+{% endblock %}

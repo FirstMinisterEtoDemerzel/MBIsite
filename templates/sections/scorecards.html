@@ -1,0 +1,15 @@
+<section id="{{ section_display(site_config, 'scorecards').anchor }}" class="card tight-card">
+    <div class="section-head compact-head">
+        <h2>{{ section_display(site_config, 'scorecards').home_title }}</h2>
+        <span class="muted">Compact previews</span>
+    </div>
+    <div class="scorecard-strip">
+        {% for card in scorecards %}
+        <a class="scorecard-tile" href="{{ url_for('static', filename='img/' ~ card.image) }}" target="_blank">
+            <img src="{{ url_for('static', filename='img/' ~ card.image) }}" alt="{{ card.course }}">
+            <div class="scorecard-name">{{ card.course }}</div>
+            <div class="scorecard-date">{{ card.day }}</div>
+        </a>
+        {% endfor %}
+    </div>
+</section>

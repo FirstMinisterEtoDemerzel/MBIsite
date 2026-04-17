@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site_config.top_line_2 if site_config else "MBI 2026" }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<header class="site-header">
+    <div class="header-row header-row-minimal">
+        <div class="header-spacer"></div>
+        <div class="header-user">
+            {% if current_user %}
+                <div class="signin-status">Signed in: <strong>{{ current_user }}</strong> ({{ current_role }})</div>
+                <a class="small-btn secondary-btn" href="{{ url_for('logout') }}">Sign out</a>
+            {% else %}
+                <form class="login-form" method="post" action="{{ url_for('login') }}">
+                    <input type="text" name="phone" placeholder="Demo phone #" aria-label="Phone">
+                    <button type="submit" class="small-btn">Sign in</button>
+                </form>
+            {% endif %}
+        </div>
+    </div>
+
+    <nav class="mobile-nav">
+        {% for key in site_config.section_order or [] %}
+            {% set display = section_display(site_config, key) %}
+            <a href="#{{ display.anchor }}">{{ display.menu_text }}</a>
+        {% endfor %}
+        <a href="{{ url_for('archive') }}">Archive</a>
+        <a href="{{ url_for('admin') }}">Admin</a>
+    </nav>
+</header>
+
+<main class="page-shell">
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>

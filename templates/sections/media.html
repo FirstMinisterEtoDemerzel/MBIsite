@@ -1,0 +1,30 @@
+<section id="{{ section_display(site_config, 'media').anchor }}" class="card tight-card">
+    <div class="section-head compact-head">
+        <h2>{{ section_display(site_config, 'media').home_title }}</h2>
+        <span class="muted">Photos, videos, and YouTube links</span>
+    </div>
+    <div class="media-grid">
+        {% for item in media_items %}
+        <article class="media-card">
+            {% if item.type == 'youtube' %}
+            <div class="video-embed-wrap">
+                <iframe src="{{ item.embed_url }}" title="{{ item.title or 'YouTube media' }}" allowfullscreen loading="lazy"></iframe>
+            </div>
+            {% elif item.type == 'video' %}
+            <video controls preload="metadata">
+                <source src="{{ item.src }}">
+            </video>
+            {% else %}
+            <a href="{{ item.src }}" target="_blank"><img src="{{ item.src }}" alt="{{ item.caption or item.title or 'media' }}"></a>
+            {% endif %}
+            <div class="media-caption">
+                {% if item.title %}<div class="media-title">{{ item.title|safe }}</div>{% endif %}
+                {% if item.caption %}<div>{{ item.caption|safe }}</div>{% endif %}
+                {% if item.type == 'youtube' %}<div><a href="{{ item.src }}" target="_blank">Open on YouTube</a></div>{% endif %}
+            </div>
+        </article>
+        {% else %}
+        <div class="muted">No trip media posted yet.</div>
+        {% endfor %}
+    </div>
+</section>

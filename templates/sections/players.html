@@ -1,0 +1,32 @@
+<section id="{{ section_display(site_config, 'players').anchor }}" class="card tight-card">
+    <div class="section-head compact-head">
+        <h2>{{ section_display(site_config, 'players').home_title }}</h2>
+        <span class="muted">Dense roster</span>
+    </div>
+    <div class="table-wrap">
+        <table class="dense-table">
+            <thead>
+                <tr>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Hdcp</th>
+                    <th>Flight</th>
+                    <th>Tee</th>
+                    <th>Room</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in players %}
+                <tr>
+                    <td>{{ p.first_name }}</td>
+                    <td>{{ p.last_name }}</td>
+                    <td>{{ p.handicap }}</td>
+                    <td>{{ p.flight }}</td>
+                    <td>{{ p.tee }}</td>
+                    <td>{{ p.room | safe }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>

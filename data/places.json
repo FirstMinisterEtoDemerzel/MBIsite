@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Caledonia Golf & Fish Club",
+    "category": "Golf",
+    "address": "369 Caledonia Dr, Pawleys Island",
+    "website": "https://caledoniagolfandfishclub.com/",
+    "directions": "https://maps.google.com/?q=369+Caledonia+Dr+Pawleys+Island"
+  },
+  {
+    "name": "True Blue Golf Club",
+    "category": "Golf",
+    "address": "900 Blue Stem Dr, Pawleys Island",
+    "website": "https://www.truebluegolf.com/",
+    "directions": "https://maps.google.com/?q=900+Blue+Stem+Dr+Pawleys+Island"
+  },
+  {
+    "name": "Frank's Outback",
+    "category": "Food",
+    "address": "10434 Ocean Hwy, Pawleys Island",
+    "website": "https://www.franksandoutback.com/",
+    "directions": "https://maps.google.com/?q=10434+Ocean+Hwy+Pawleys+Island"
+  },
+  {
+    "name": "Publix",
+    "category": "Groceries",
+    "address": "10225 Ocean Hwy, Pawleys Island",
+    "website": "https://www.publix.com/",
+    "directions": "https://maps.google.com/?q=10225+Ocean+Hwy+Pawleys+Island"
+  }
+]

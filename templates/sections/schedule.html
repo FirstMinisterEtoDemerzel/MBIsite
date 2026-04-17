@@ -1,0 +1,25 @@
+<section id="{{ section_display(site_config, 'schedule').anchor }}" class="card tight-card">
+    <div class="section-head compact-head">
+        <h2>{{ section_display(site_config, 'schedule').home_title }}</h2>
+        <span class="muted">Trip schedule</span>
+    </div>
+    <div class="schedule-list">
+        {% for item in schedule %}
+        <div class="schedule-item">
+            <div class="schedule-left">
+                <div class="schedule-day schedule-day-strong">{{ item.day }}</div>
+                <div class="schedule-time">{{ item.time }}</div>
+            </div>
+            <div class="schedule-right">
+                <div class="schedule-title">{{ item.title | safe }}</div>
+                <div class="schedule-location">{{ item.location | safe }}</div>
+                {% if item.note %}
+                <div class="schedule-note">{{ item.note | safe }}</div>
+                {% endif %}
+            </div>
+        </div>
+        {% else %}
+        <div class="muted">No schedule posted yet.</div>
+        {% endfor %}
+    </div>
+</section>

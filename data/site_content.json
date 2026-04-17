@@ -1,0 +1,288 @@
+{
+  "site_title": "MBI Golf Trip",
+  "year": "2026",
+  "hero_title": "Myrtle Beach Invitational",
+  "hero_subtitle": "Trip hub for schedule, golfers, scorecards, weather, and quick updates.",
+  "next_up": {
+    "title": "Next Up",
+    "when": "Tue 5/13 \u2022 4:00 PM",
+    "what": "Check in at Litchfield Resort",
+    "details": "14276 Ocean Blvd, Litchfield Beach, SC 29585 \u2022 (843) 237-3000"
+  },
+  "check_in_html": "<b>Dave Polak</b> (770-356-5895)<br>Check in at <b>Litchfield Resort</b><br>14276 Ocean Blvd, Litchfield Beach, SC 29585<br>(843) 237-3000",
+  "daily_announcements_html": "<p><b>Welcome to MBI 2026.</b> Check in Tuesday afternoon and bring cash for the kickoff dinner buy-in.</p>",
+  "trip_schedule_html": "<div style=\"overflow:auto;\" class=\"table-responsive\"><table class=\"data-table\"><thead><tr><th>When</th><th>What</th><th>Where</th><th>Note</th></tr></thead><tbody>\n<tr><td>Tue : 5/13<br>4pm</td><td><b>Check in</b></td><td><i>Litchfield Resort</i></td><td>14276 Ocean Blvd<br>Litchfield Beach, SC 29585<br>(843) 237-3000</td></tr>\n<tr><td>Tue : 5/13<br>6pm</td><td><b>Kickoff dinner<br>and meeting</b></td><td><i>TPC Myrtle Beach<br>1199 TPC Blvd <br> Murrells Inlet, SC 29576</i></td><td>$200 cash buy-in. Bring cash (no $1 nor $5 bills) or Venmo @David-Polak-6.<br>This covers daily cash prizes, Tuesday\u2019s and Saturday night\u2019s dinner, taxes and tips.<br>For One-man, Two-day (@True Blue) Best Ball Tournament, pay Bill Matthews $20.</td></tr>\n<tr><td>Wed : 5/14<br>Morning</td><td><b>Golf</b></td><td><i>True Blue</i></td><td>First tee time, 8:06 AM. Off front and back</td></tr>\n<tr><td>Wed : 5/14<br>Evening</td><td><b>Dinner</b></td><td><i>On your own</i></td><td>#</td></tr>\n<tr><td>Thu : 5/15<br>Morning</td><td><b>Golf</b></td><td><i>TPC Myrtle Beach</i></td><td>First tee time, 8:00 AM. Off front and back</td></tr>\n<tr><td>Thu : 5/15<br>8pm</td><td><b>Dinner</b></td><td><i>Franks Outback restaurant</i></td><td>Dinner invitation (optional)</td></tr>\n<tr><td>Fri : 5/16<br>Morning</td><td><b>Golf</b></td><td><i>Heritage (optional)</i></td><td>First tee time, 9:00 AM. Off front and back</td></tr>\n<tr><td>Fri : 5/16<br>Evening</td><td><b>Dinner</b></td><td><i>On your own<br>(Russells Seafood for many)</i></td><td>#</td></tr>\n<tr><td>Sat : 5/17<br>Morning</td><td><b>Golf</b></td><td><i>Pawley\u2019s Plantation</i></td><td>First tee time, 9:21 AM. Off front and back</td></tr>\n<tr><td>Sat : 5/17<br>6pm</td><td><b>Awards banquet</b></td><td><i>Quigley\u2019s Next Door (QND)<br>257 Willbrook Blvd. P.I., SC 29585</i></td><td>Drinks at 6. Dinner about 7:00.<br>Dinner, taxes and tip are included in your $200. Drinks are not included.</td></tr>\n<tr><td>Sun : 5/18<br>Morning</td><td><b>Go home</b></td><td><i>Away</i></td><td>Hydrate!</td></tr>\n</tbody></table></div>",
+  "places_html": "<div style=\"overflow:auto;\" class=\"table-responsive\"><table class=\"data-table\"><thead><tr><th>Place</th><th>Address</th><th>Phone</th></tr></thead><tbody>\n<tr><td><b>True Blue Golf Club</b><br><a href='https://www.truebluegolf.com/' target='_blank'>Website</a></td><td>900 Blue Stem Dr, P.I., SC 29585<br><a href='https://goo.gl/maps/HXrYwo2VG262' target='_blank'>Directions</a></td><td>843-235-0900</td></tr>\n<tr><td><b>TPC Myrtle Beach</b><br><a href='https://tpcmyrtlebeach.com/new-champions-pub-tpc-myrtle-beach/' target='_blank'>Website</a></td><td>1199 TPC Blvd, MI, SC 29576<br><a href='https://goo.gl/maps/gzts2TwtCnrGTimKA' target='_blank'>Directions</a></td><td>843-357-3399</td></tr>\n<tr><td><b>Pawleys Plantation G&CC</b></td><td>70 Tanglewood Drive, P.I., SC 29585<br><a href='https://goo.gl/maps/h1wSg7KmcKadEgSL7' target='_blank'>Directions</a></td><td>843-237-6000</td></tr>\n<tr><td><b>Quigley\u2019s Pint & Plate</b><br><a href='https://www.pintandplate.com/' target='_blank'>Website</a></td><td>257 Willbrook Blvd, P.I., SC 29585<br><a href='https://goo.gl/maps/vpwX8SdT5PfdeBpHA' target='_blank'>Directions</a></td><td>843-237-7010</td></tr>\n<tr><td><b>Frank\u2019s Outback</b><br><a href='https://www.franksandoutback.com/' target='_blank'>Website</a></td><td>10434 Ocean Highway, P.I., SC 29585<br><a href='https://maps.app.goo.gl/a4tRMGs1BRNBdoARA' target='_blank'>Directions</a></td><td>843-237-3030</td></tr>\n<tr><td><b>Caledonia Golf Club</b><br><a href='https://caledoniagolfandfishclub.com/' target='_blank'>Website</a></td><td>369 Caledonia Dr, P.I., SC 29585<br><a href='https://goo.gl/maps/HXrYwo2VG262' target='_blank'>Directions</a></td><td>843-237-3675</td></tr>\n<tr><td><b>Wachesaw Plantation</b><br><a href='https://www.wachesaw.com/' target='_blank'>Website</a></td><td>1930 Governors Landing, M.I., SC 29576<br><a href='https://goo.gl/maps/U33LQ1FNYBrtDSZs9' target='_blank'>Directions</a></td><td>843-357-1263</td></tr>\n<tr><td><b>River Club Golf</b><br><a href='https://playriverclub.com/' target='_blank'>Website</a></td><td>1 Club Cir, P.I., SC 29585<br><a href='https://goo.gl/maps/ZgMuHNq82WB2' target='_blank'>Directions</a></td><td>843-237-8755</td></tr>\n<tr><td><b>PGA TOUR Superstore</b><br><a href='https://www.pgatoursuperstore.com/stores/myrtle-beach-south-carolina/0302.html' target='_blank'>Website</a></td><td>1400 29th Avenue North, M.B., SC 29577<br><a href='https://goo.gl/maps/pSkoh2PdLfn' target='_blank'>Directions</a></td><td>843-839-4653</td></tr>\n<tr><td><b>Island Bar & Grill</b><br><a href='https://www.islandbarandgrill.com/' target='_blank'>Website</a></td><td>10744 Ocean Hwy, P.I., SC 29585<br><a href='https://goo.gl/maps/y6HVK6Gp3Sn' target='_blank'>Directions</a></td><td>843-235-3399</td></tr>\n<tr><td><b>Pawley's Raw Bar</b><br><a href='https://pawleysrawbar.com' target='_blank'>Website</a></td><td>9448 Ocean Hwy, P.I., SC 29585<br><a href='https://goo.gl/maps/ZhgsxE1g7YUzSYr89' target='_blank'>Directions</a></td><td>843-979-2722</td></tr>\n<tr><td><b>Hog Heaven</b><br><a href='https://hogheaveninc.com/' target='_blank'>Website</a></td><td>7147 Ocean Hwy, P.I., SC 29585<br><a href='https://goo.gl/maps/UXdNbXSEYhivp2AS9' target='_blank'>Directions</a></td><td>843-237-7444</td></tr>\n<tr><td><b>J Peters (Marshwalk)</b><br><a href='https://jpetersgrill.com/' target='_blank'>Website</a></td><td>4037 US 17 Business, MI, SC 29576<br><a href='https://goo.gl/maps/M2eedmvihSULJTb39' target='_blank'>Directions</a></td><td>843-651-5850</td></tr>\n<tr><td><b>J. Peters Grill & Bar</b><br><a href='https://jpetersgrill.com/' target='_blank'>Website</a></td><td>10185 Ocean Hwy, P.I., SC 29585<br><a href='https://goo.gl/maps/mwdjZ3V9Y3bday1b8' target='_blank'>Directions</a></td><td>843-314-0061</td></tr>\n<tr><td><b>Wahoos Fish House</b><br><a href='https://www.wahoosfishhouse.com/' target='_blank'>Website</a></td><td>3993 US 17 Business, M.I., SC 29576<br><a href='https://goo.gl/maps/YHDrA4C8W662' target='_blank'>Directions</a></td><td>843-651-5800</td></tr>\n<tr><td><b>Conch Cafe</b><br><a href='https://conchcafe.net/' target='_blank'>Website</a></td><td>1870 N Waccamaw Dr, Garden City, SC 29576<br><a href='https://goo.gl/maps/5ocP4T5B6Bkv34To7' target='_blank'>Directions</a></td><td>843-651-6556</td></tr>\n<tr><td><b>Pawleys Tap and Pour</b><br><a href='https://www.pawleystapandpour.com/' target='_blank'>Website</a></td><td>13089 Ocean Highway, P.I., SC 29585<br><a href='https://goo.gl/maps/Jn6XfD1Hv7s4k981A' target='_blank'>Directions</a></td><td>843-979-1010</td></tr>\n<tr><td><b>Tuscany Bistro</b><br><a href='https://tuscanybistropi.com/' target='_blank'>Website</a></td><td>10744 Ocean Hwy, P.I., SC 29585<br><a href='https://goo.gl/maps/VuKkVX8DqmLPCwSf7' target='_blank'>Directions</a></td><td>843-314-0021</td></tr>\n<tr><td><b>Russell\u2019s Seafood Grill</b><br><a href='https://russellsseafood.com/' target='_blank'>Website</a></td><td>4906 Hwy US-17 BUS, M.I., SC 29576<br><a href='https://goo.gl/maps/YKzCb116bRMazEsU8' target='_blank'>Directions</a></td><td>843-651-0553</td></tr>\n<tr><td><b>Jimmy Buffett's Margaritaville</b><br><a href='https://www.margaritavillemyrtlebeach.com/' target='_blank'>Website</a></td><td>1114 Celebrity Circle, Myrtle Beach, SC 29577<br><a href='https://goo.gl/maps/w1d7RTdREAsaTtx57' target='_blank'>Directions</a></td><td>843-448-5455</td></tr>\n<tr><td><b>Publix</b><br><a href='https://www.publix.com/locations/1478-pawleys-island-plaza' target='_blank'>Website</a></td><td>10225 Ocean Hwy, P.I., SC 29585<br><a href='https://goo.gl/maps/uZBcgGpqn8SGsSUm8' target='_blank'>Directions</a></td><td>843-235-3755</td></tr>\n<tr><td><b>Dead Dog Saloon</b><br><a href='https://www.deaddogsaloon.com/' target='_blank'>Website</a></td><td>4079 US-17 BUS, MI, SC 29576<br><a href='https://maps.app.goo.gl/8vwY8Fiw1pZJut73A' target='_blank'>Directions</a></td><td>843-438-7444</td></tr>\n<tr><td><b>Captain John\u2019s Seafood Grill</b><br><a href='https://www.captainjohnsseafoodgrill.com/' target='_blank'>Website</a></td><td>13057 Ocean Highway, P.I., SC 29585<br><a href='https://maps.app.goo.gl/vaUVzQekGMwS7ra99' target='_blank'>Directions</a></td><td>843-235-9300</td></tr>\n</tbody></table></div>",
+  "golfers": [
+    [
+      "Adam",
+      "Polak",
+      "",
+      12,
+      "B",
+      2,
+      "770 401 4588"
+    ],
+    [
+      "Allan",
+      "Watkins",
+      "",
+      18,
+      "B",
+      3,
+      "404 610 5115"
+    ],
+    [
+      "Andrew",
+      "Vittery",
+      "",
+      10,
+      "B",
+      2,
+      "770 841 7277"
+    ],
+    [
+      "Barry",
+      "McHan",
+      "",
+      9,
+      "A",
+      3,
+      "404 915 2694"
+    ],
+    [
+      "Ben",
+      "Elliott",
+      "",
+      12,
+      "B",
+      3,
+      "770 656 9095"
+    ],
+    [
+      "Bob",
+      "Beckham",
+      "",
+      12,
+      "B",
+      3,
+      "404 787 9864"
+    ],
+    [
+      "Bob",
+      "Schlesinger",
+      "",
+      14,
+      "SR",
+      3,
+      "281 808 4808"
+    ],
+    [
+      "Brian",
+      "Caldwell",
+      "",
+      11,
+      "B",
+      3,
+      "404 414 0518"
+    ],
+    [
+      "Dave",
+      "Polak",
+      "",
+      16,
+      "SR",
+      4,
+      "770 356 5895"
+    ],
+    [
+      "Dennis",
+      "Latimer",
+      "",
+      9,
+      "A",
+      3,
+      "678 575 2414"
+    ],
+    [
+      "Evan",
+      "Stewart",
+      "",
+      4,
+      "A",
+      1,
+      "601 325 8577"
+    ],
+    [
+      "Jared",
+      "Polak",
+      "",
+      10,
+      "A",
+      2,
+      "678 333 7985"
+    ],
+    [
+      "Jerry",
+      "Probst",
+      "",
+      16,
+      "SR",
+      3,
+      "407 592 9606"
+    ],
+    [
+      "Joe",
+      "Lewandowski",
+      "",
+      19,
+      "SR",
+      4,
+      "770 823 6483"
+    ],
+    [
+      "John",
+      "Burrell",
+      "",
+      9,
+      "A",
+      3,
+      "770 330 9880"
+    ],
+    [
+      "John",
+      "Smith",
+      "",
+      8,
+      "A",
+      3,
+      "251 725 2671"
+    ],
+    [
+      "Johnny",
+      "Thomas",
+      "",
+      19,
+      "SR",
+      3,
+      "706 265 5877"
+    ],
+    [
+      "Karl",
+      "Vittery",
+      "",
+      7,
+      "A",
+      3,
+      "404 414 9087"
+    ],
+    [
+      "Mike",
+      "Ball",
+      "",
+      15,
+      "B",
+      3,
+      "678 549 1075"
+    ],
+    [
+      "Mike",
+      "Quinton",
+      "",
+      13,
+      "SR",
+      3,
+      "770 876 0660"
+    ],
+    [
+      "Neal",
+      "Wynn",
+      "",
+      6,
+      "A",
+      3,
+      "630 973 8764"
+    ],
+    [
+      "Richie",
+      "Aitkin",
+      "",
+      16,
+      "B",
+      2,
+      "678 997 3550"
+    ],
+    [
+      "Rick",
+      "Bostick",
+      "",
+      7,
+      "A",
+      3,
+      "678 467 4301"
+    ],
+    [
+      "Selwyn",
+      "Glanzer",
+      "",
+      9,
+      "A",
+      2,
+      "770 262 7878"
+    ],
+    [
+      "Stan",
+      "Gantt",
+      "",
+      22,
+      "SR",
+      3,
+      "770 312 7673"
+    ],
+    [
+      "Steve",
+      "Laney",
+      "",
+      11,
+      "SR",
+      4,
+      "850 261 1243"
+    ],
+    [
+      "Taylor",
+      "Lawrence",
+      "",
+      11,
+      "B",
+      2,
+      "706 206 9293"
+    ],
+    [
+      "Tony",
+      "Buesing",
+      "",
+      14,
+      "SR",
+      4,
+      "706 973 0010"
+    ]
+  ],
+  "scorecards": [
+    {
+      "title": "Caledonia",
+      "filename": "Caledonia-Scorecard.png"
+    },
+    {
+      "title": "True Blue",
+      "filename": "True-Blue-Scorecard.png"
+    },
+    {
+      "title": "TPC Myrtle Beach",
+      "filename": "TPC-MyrtleBeach-Scorecard.png"
+    },
+    {
+      "title": "Pawleys Plantation",
+      "filename": "Pawleys-Plantation-Scorecard.png"
+    }
+  ]
+}

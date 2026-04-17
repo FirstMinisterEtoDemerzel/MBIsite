@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Daily Announcements",
+    "url": "#schedule-announcements",
+    "note": "Current operational notes and updates"
+  },
+  {
+    "title": "Golf Itinerary",
+    "url": "#players",
+    "note": "Future desktop workflow target"
+  },
+  {
+    "title": "Course / Trip Notes",
+    "url": "#scorecards",
+    "note": "Organizer-selected attachments placeholder"
+  }
+]

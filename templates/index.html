@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<section class="hero-card hero-image-card">
+    <div class="hero-top-flex">
+        <a class="hero-text-lines hero-home-link" href="{{ url_for('index') }}">
+            <div class="hero-line-1">{{ site_config.top_line_1 }}</div>
+            <div class="hero-line-2">{{ site_config.top_line_2 }}</div>
+            <div class="hero-line-3">{{ site_config.top_line_3 }}</div>
+        </a>
+        <div class="hero-center-image hero-center-image-small">
+            <img src="{{ site_config.hero_image_url }}" alt="MBI top image">
+        </div>
+    </div>
+</section>
+
+{% for section_key in section_order %}
+    {% include 'sections/' ~ section_key ~ '.html' %}
+{% endfor %}
+
+{% endblock %}

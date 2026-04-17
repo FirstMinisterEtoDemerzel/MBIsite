@@ -1,0 +1,109 @@
+{
+  "site_title": "MBI Golf Trip",
+  "year": "2026",
+  "hero_subtitle": "Myrtle Beach golf trip hub",
+  "check_in_html": "<b>Dave Polak</b> (770-356-5895)<br>Check in at <b>Litchfield Resort</b><br>14276 Ocean Blvd, Litchfield Beach, SC 29585<br>(843) 237-3000",
+  "announcements": [
+    {
+      "title": "Arrival Day",
+      "body": "Travel safely and check in at the resort. Watch this page for daily updates.",
+      "date": "2026-05-12"
+    },
+    {
+      "title": "Round 1",
+      "body": "Be in the lobby 45 minutes before departure.",
+      "date": "2026-05-13"
+    }
+  ],
+  "archive_posts": [
+    {
+      "title": "Site rebuild",
+      "body": "Archive page is ready for older posts and retired notices.",
+      "date": "2026-04-14"
+    }
+  ],
+  "schedule": [
+    {
+      "day": "Wednesday",
+      "date": "2026-05-13",
+      "time": "8:00 AM",
+      "course": "Caledonia",
+      "starting_hole": "1",
+      "tee_box": "White",
+      "notes": "Opening round"
+    },
+    {
+      "day": "Thursday",
+      "date": "2026-05-14",
+      "time": "8:00 AM",
+      "course": "True Blue",
+      "starting_hole": "1",
+      "tee_box": "White",
+      "notes": "Second round"
+    },
+    {
+      "day": "Friday",
+      "date": "2026-05-15",
+      "time": "8:00 AM",
+      "course": "TPC Myrtle Beach",
+      "starting_hole": "1",
+      "tee_box": "White",
+      "notes": "Third round"
+    },
+    {
+      "day": "Saturday",
+      "date": "2026-05-16",
+      "time": "8:00 AM",
+      "course": "Pawleys Plantation",
+      "starting_hole": "1",
+      "tee_box": "White",
+      "notes": "Final round"
+    }
+  ],
+  "players": [
+    {
+      "first_name": "Allan",
+      "last_name": "Watkins",
+      "flight": "A",
+      "handicap": "10.4",
+      "room": "101",
+      "phone": "",
+      "tee": "White"
+    },
+    {
+      "first_name": "Dave",
+      "last_name": "Polak",
+      "flight": "A",
+      "handicap": "11.2",
+      "room": "102",
+      "phone": "",
+      "tee": "White"
+    }
+  ],
+  "places": [
+    {
+      "name": "Litchfield Resort",
+      "category": "Lodging",
+      "notes": "Main check-in location."
+    },
+    {
+      "name": "Pawleys Island Tavern",
+      "category": "Food",
+      "notes": "Good casual stop near the beach."
+    }
+  ],
+  "scorecards": [
+    {
+      "label": "Caledonia",
+      "filename": "",
+      "url": "",
+      "notes": "Add image file to static/scorecards or external link."
+    },
+    {
+      "label": "True Blue",
+      "filename": "",
+      "url": "",
+      "notes": "Add image file to static/scorecards or external link."
+    }
+  ]
+}

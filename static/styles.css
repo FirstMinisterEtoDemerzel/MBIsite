@@ -1,0 +1,111 @@
+:root {
+    --bg: #f3f6fb;
+    --card: #ffffff;
+    --text: #162130;
+    --muted: #5b6678;
+    --navy: #19365d;
+    --navy-2: #274c7a;
+    --accent: #d4e6ff;
+    --border: #d9e1eb;
+    --shadow: 0 10px 30px rgba(16, 36, 64, 0.08);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+a { color: #1659c3; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 14px; }
+.site-header {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--navy); color: white;
+    box-shadow: 0 3px 12px rgba(0,0,0,.15);
+}
+.nav-wrap {
+    display: flex; gap: 16px; justify-content: space-between; align-items: center;
+    padding-top: 12px; padding-bottom: 12px;
+}
+.site-name { margin: 0; font-size: 1.15rem; }
+.site-nav { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+.site-nav a { color: white; text-decoration: none; font-size: .95rem; }
+.hero { padding: 18px 0 10px; }
+.hero-grid, .top-grid {
+    display: grid; gap: 14px;
+    grid-template-columns: 1.6fr 1fr;
+}
+.eyebrow {
+    display: inline-block; margin-bottom: 8px; padding: 5px 10px;
+    background: var(--accent); border-radius: 999px; font-size: .82rem; font-weight: bold;
+}
+.hero h2 { margin: 0 0 8px; font-size: 2rem; }
+.hero-copy { margin: 0 0 14px; color: var(--muted); font-size: 1rem; }
+.card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+    box-shadow: var(--shadow); padding: 14px;
+}
+.compact-card { margin-top: 8px; }
+.card h3, .card h2 { margin-top: 0; margin-bottom: 10px; }
+.next-up-card { align-self: start; }
+.card-label { font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.next-up-time { font-size: 1.1rem; font-weight: bold; margin-top: 8px; }
+.next-up-what { font-size: 1.35rem; font-weight: bold; margin-top: 6px; }
+.next-up-details, .muted { color: var(--muted); }
+.top-grid { margin-bottom: 14px; }
+.weather-frame { width: 100%; height: 360px; border: 0; background: white; }
+.section-block { margin-bottom: 14px; }
+.table-scroll, .table-host { overflow-x: auto; }
+.data-table {
+    width: 100%; border-collapse: collapse; min-width: 680px;
+}
+.data-table th {
+    background: var(--navy-2); color: white; text-align: left;
+    font-size: .92rem; padding: 8px 10px;
+}
+.data-table td {
+    padding: 8px 10px; border-top: 1px solid var(--border); vertical-align: top;
+}
+.data-table tbody tr:nth-child(even) td { background: #f8fbff; }
+.compact-table td, .compact-table th { text-align: center; padding: 6px 8px; }
+.scorecard-grid {
+    display: grid; gap: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+.scorecard-card {
+    border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: #fbfcff;
+}
+.scorecard-thumb img { display: block; width: 100%; height: auto; }
+.scorecard-title { padding: 10px; font-weight: bold; text-align: center; }
+.rich-text { line-height: 1.45; }
+.smaller-copy { font-size: .95rem; }
+.admin-wrap { padding-top: 18px; padding-bottom: 20px; }
+.admin-form { display: grid; gap: 12px; }
+.form-grid { display: grid; gap: 12px; }
+.two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+label { display: grid; gap: 6px; font-weight: 600; }
+input, textarea, button, .secondary-button {
+    font: inherit;
+}
+input, textarea {
+    width: 100%; padding: 10px 12px; border-radius: 10px;
+    border: 1px solid var(--border); background: white;
+}
+textarea { resize: vertical; }
+button, .secondary-button {
+    display: inline-block; padding: 10px 14px; border-radius: 10px; border: 0;
+    background: var(--navy); color: white; text-decoration: none; cursor: pointer;
+}
+.secondary-button { background: var(--navy-2); }
+.admin-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.flashes { padding-top: 12px; }
+.flash { padding: 10px 12px; border-radius: 10px; margin-bottom: 10px; }
+.flash-success { background: #e7f8ed; color: #15653a; border: 1px solid #b9e5c8; }
+code { background: #eef2f8; padding: 2px 4px; border-radius: 4px; }
+@media (max-width: 860px) {
+    .hero-grid, .top-grid, .two-col, .nav-wrap { grid-template-columns: 1fr; display: grid; }
+    .site-nav { justify-content: flex-start; }
+    .hero h2 { font-size: 1.6rem; }
+    .weather-frame { height: 320px; }
+}
